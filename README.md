@@ -29,25 +29,3 @@ module.exports = {
     ...
 }
 ```
-
-`webpack.conf.js` 配置：
-
-```js
-// 引入插件
-var vConsolePlugin = require('vconsole-webpack-plugin'); 
-
-// 接收运行参数
-const argv = require('yargs')
-    .describe('debug', 'debug 环境') // use 'webpack --debug'
-    .argv;
-
-module.exports = {
-    ...
-
-    plugins: [
-        new vConsolePlugin({enable: !!argv.debug}),
-        ...
-    ]
-    ...
-}
-```
